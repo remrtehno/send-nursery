@@ -21,15 +21,24 @@ if response.status_code == 200:
     soup = BeautifulSoup(response.text, 'html.parser')
 
     # Find all <a> tags matching the selector
-    links = soup.select("#unitstable tr td a:first-child")
+    links = soup.select("#unitstable tr td")
 
     # Loop through each link
     # Loop through each link
     for link in links:
         # Check if the 'href' attribute exists for the link
-        if 'href' in link.attrs:
+        if link:
             # Get the href attribute of the link
-            link_url = link['href']
+            link_url = link.find('a', href=True)
+
+    
+            if link_url:
+                link_url = link_url['href']
+            else:
+                link_url = ""
+
+            print(link_url)
+       
 
             # Construct the absolute URL using urljoin
             absolute_url = urljoin(base_url, link_url)

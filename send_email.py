@@ -66,24 +66,15 @@ parsed_data = json.loads(json_str)
 # Access and print the values
 for key, value in parsed_data.items():
     print(f"{key}: {value}")
-    message = create_message('me', value, 'A possible reservation a spot', '''
+    message = create_message('me', value, 'Przyjęcie do przedszkola (żłobka)', '''
                          
-Hello,
+Dzień dobry,
 
-Dear Madam/Sir,
+Chcielibyśmy zapisać naszego 2,5-letniego syna do Waszego przedszkola. Czy są wolne miejsca?
 
-I am writing you to clarify whether we can reserve a spot at your nursery for our son, who is 2 years old. 
+Jeśli tak, będziemy potrzebowali zaświadczenia, że zostanie przyjęty do Waszego przedszkola. Czy jest to możliwe u Państwa i ile to będzie kosztować?
 
-We're a family, we have a National Visa D and will be relocating to Poland soon from Uzbekistan. We would like to enroll our son in one of your nursery groups. 
-
-Your location is the nearest to the apartment we are going to stay so we think it would be comfortable for us and our son.
-
-However, The Embassy of Poland has required an invitation from the nursery for our son, which will be a confirmation that he will be enrolled in one of the nursery groups.
-
-Would we possibly reserve a spot at your nursery, if you have an available one, and get such invitation/confirmation for the Poland Embassy in Tashkent, from you that you can enroll him?
-                             
-We look forward to hearing from you.
-
-                         
+Z poważaniem,
+Igor Kurjakow  
                          ''' )
     print(send_message(service=service, user_id='me', message=message))
