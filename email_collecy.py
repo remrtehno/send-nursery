@@ -7,7 +7,7 @@ import json
 
 
 # Define the URL of the webpage you want to scrape
-base_url  = 'https://nabor.pcss.pl/warszawa/zlobek/oferta'  # Replace with the actual URL
+base_url  = 'https://nabor.pcss.pl/bialystok/zlobek/oferta'  # Replace with the actual URL
 
 # Send an HTTP GET request to the base URL
 response = requests.get(base_url)
